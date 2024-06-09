@@ -23,7 +23,7 @@ async def download(ctx, url):
             'outtmpl': {"default":f"{download_path}%(playlist_title|)s/%(title)s.%(ext)s"},
             'postprocessors': [{  # Extract audio using ffmpeg
                 'key': 'FFmpegExtractAudio',
-                'preferredcodec': 'm4a',
+                'preferredcodec': 'mp3',
             }]
         }
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
