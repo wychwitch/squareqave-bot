@@ -20,7 +20,7 @@ async def download(ctx, url):
         msg = await ctx.reply("Starting download...")
         ydl_opts = {
             'format': 'm4a/bestaudio/best',
-            'outtmpl': {"default":f"{download_path}%(playlist_title|)s/%(title)s.%(ext)s"},
+            'outtmpl': {"default":f"{download_path}%(playlist_title|)s/%(playlist_index|)s%(playlist_index& - |)s%(title)s.%(ext)s"},
             'postprocessors': [{  # Extract audio using ffmpeg
                 'key': 'FFmpegExtractAudio',
                 'preferredcodec': 'mp3',
